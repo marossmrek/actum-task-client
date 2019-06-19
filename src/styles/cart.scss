@@ -1,0 +1,121 @@
+@import "variables";
+
+.wrapper {
+  font-family: $defaultFontFamily;
+  font-size: $defaultFontSize;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: $lightPink;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, $lightPink, $lightOrange);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, $lightPink, $lightOrange); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  .cart {
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+
+    .cart-headline {
+      display: flex;
+      justify-content: space-between;
+      padding: $defaultPadding $defaultPadding * 2;
+      background-color: $myWhite;
+      border-top-left-radius: $defaultBorderRadius;
+      border-top-right-radius: $defaultBorderRadius;
+
+      p:first-child {
+        line-height: $defaultLineHeight * 2.3;
+      }
+
+      p:last-child {
+        font-size: $defaultFontSize * 1.3;
+        font-weight: bold;
+      }
+
+    }
+
+    .cart-text {
+      display: inline-block;
+    }
+
+    .cart-list {
+      padding: $defaultPadding * 2;
+      margin: 0;
+      background: $veryLightPink;
+      background: -webkit-linear-gradient(to top, $veryLightPink, $veryLightOrange);
+      background: linear-gradient(to top, $veryLightPink, $veryLightOrange);
+
+      .cart-item {
+        font-size: $defaultFontSize * 0.9;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+        list-style: none;
+        text-align: left;
+        background-color: $myWhite;
+        border-radius: $defaultBorderRadius;
+        padding: $defaultPadding $defaultPadding * 1.5;
+        margin: $defaultMargin * 3 0;
+
+        &:hover {
+          -ms-transform: scale(1.03, 1.03); /* IE 9 */
+          -webkit-transform: scale(1.03, 1.03); /* Safari prior 9.0 */
+          transform: scale(1.03, 1.03); /* Standard syntax */
+        }
+
+        @media screen and (max-width: $breakMediumScreen) {
+          width: 75%;
+        }
+
+        span {
+          p {
+            margin: $defaultMargin * 0.5 0;
+          }
+
+          p:first-child {
+            font-weight: bold;
+          }
+
+          p:last-child {
+            color: $myGrey;
+            font-size: $defaultFontSize * 0.8;
+          }
+
+        }
+
+        p:first-of-type {
+          font-weight: bold;
+        }
+
+        .delete-button-wrapper {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          cursor: pointer;
+          border-radius: 50%;
+          background-color: $myWhite;
+          padding: $defaultPadding * 0.5;
+
+          .delete-button-icon {
+            color: $myRed;
+            margin: 0;
+            font-size: $defaultFontSize * 0.8;
+            line-height: $defaultLineHeight * 0.8;
+            font-weight: bold;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
