@@ -23,7 +23,11 @@
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
     -o-animation: fadein 2s; /* Opera < 12.1 */
-    animation: fadein 2s;;
+    animation: fadein 2s;
+
+    @media screen and (max-width: $breakMediumScreen) {
+      width: 75%;
+    }
 
     .cart-headline {
       display: flex;
@@ -71,10 +75,6 @@
           -ms-transform: scale(1.03, 1.03); /* IE 9 */
           -webkit-transform: scale(1.03, 1.03); /* Safari prior 9.0 */
           transform: scale(1.03, 1.03); /* Standard syntax */
-        }
-
-        @media screen and (max-width: $breakMediumScreen) {
-          width: 75%;
         }
 
         span {
