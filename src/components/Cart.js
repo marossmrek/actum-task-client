@@ -38,39 +38,41 @@ class Cart extends React.Component {
         const { totalPrice } = this.state
 
         return (
-            cart && (
-                <div className="wrapper">
-                    <div className="cart">
-                        <div className="cart-headline">
-                            <p className="cart-text">My Cart</p>
-                            {cart.items && cart.items.length === 0 ? <p className="cart-text">is empty</p> : <p className="cart-text">{totalPrice}&#8364;</p>}
-                        </div>
-                        {
-                            cart.items && cart.items.length > 0 &&
-                            <ul className="cart-list">
-                                {
-                                    cart.items.map(item => {
-                                        return (
-                                            <li key={item.id} id={item.id} className="cart-item">
-                                                <span>
-                                                    <p className="cart-text">{item.name}</p>
-                                                    <br/>
-                                                    <p className="cart-text">{item.description}</p>
-                                                </span>
-                                                <p className="cart-text">{item.price}&#8364;</p>
-                                                <span className="delete-button-wrapper" onClick={() => deleteItem(item.id)}>
-                                                    <p className="delete-button-icon">&#10005;</p>
-                                                </span>
-                                            </li>
-                                        )
+            <div className="wrapper">
+                {
+                    cart && (
+                        <div className="cart">
+                            <div className="cart-headline">
+                                <p className="cart-text">My Cart</p>
+                                {cart.items && cart.items.length === 0 ? <p className="cart-text">is empty</p> : <p className="cart-text">{totalPrice}&#8364;</p>}
+                            </div>
+                            {
+                                cart.items && cart.items.length > 0 &&
+                                    <ul className="cart-list">
+                                        {
+                                            cart.items.map(item => {
+                                                return (
+                                                    <li key={item.id} id={item.id} className="cart-item">
+                                                            <span>
+                                                                <p className="cart-text">{item.name}</p>
+                                                                <br/>
+                                                                <p className="cart-text">{item.description}</p>
+                                                            </span>
+                                                        <p className="cart-text">{item.price}&#8364;</p>
+                                                        <span className="delete-button-wrapper" onClick={() => deleteItem(item.id)}>
+                                                                <p className="delete-button-icon">&#10005;</p>
+                                                            </span>
+                                                    </li>
+                                                )
 
-                                    })
-                                }
-                            </ul>
-                        }
-                    </div>
-                </div>
-            )
+                                            })
+                                        }
+                                    </ul>
+                            }
+                        </div>
+                    )
+                }
+            </div>
         )
     }
 }

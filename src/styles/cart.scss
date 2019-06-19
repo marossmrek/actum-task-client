@@ -1,4 +1,5 @@
 @import "variables";
+@import "animations";
 
 .wrapper {
   font-family: $defaultFontFamily;
@@ -19,6 +20,10 @@
     width: 50%;
     max-width: 500px;
     text-align: center;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;;
 
     .cart-headline {
       display: flex;
